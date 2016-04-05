@@ -8,7 +8,7 @@ This script will helps  to collect various statistics about your router and visu
 * [Install](https://bitbucket.org/padavan/rt-n56u/wiki/EN/HowToConfigureEntware) Entware,
 * Install necesary packages:
 ```
-opkg install bash cron nginx rrdtool
+opkg install bash cron rrdtool
 ```
 * Download rrdstorm.sh, make it executable and initialize round-robin database:
 ```
@@ -25,21 +25,6 @@ chmod +x /opt/etc/cron.hourly/rrdstorm_graph.sh
 sed -i 's|root|admin|g' /opt/etc/crontab
 /opt/etc/init.d/S10cron start
 ```
-* Configure web server to display statistics. Edit `/opt/etc/nginx/nginx.conf`. 
-Change first line:
-```
-user  nobody nogroup;
-```
-Find `server` section and edit this line:
-```
-listen       81 default_server;
-```
-then find `location` section and change following line:
-```
-root   /opt/share/nginx/html/stat;
-```
-Now start web server and check `http://192.168.1.1:81` page from web browser:
-```
-/opt/etc/init.d/S80nginx start
-```
+Now check [http://my.router/custom/rrdstorm/index.html]([http://my.router/custom/rrdstorm/index.html) page from web browser:
 
+All images will be updated once per hour.

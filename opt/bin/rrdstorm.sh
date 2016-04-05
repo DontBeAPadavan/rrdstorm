@@ -40,7 +40,7 @@ DATE=$(date '+%x %R')
 RRDTOOL=/opt/bin/rrdtool
 RRDUPDATE=/opt/bin/rrdupdate
 RRDDATA=/opt/var/rrd_storm
-RRDOUTPUT=/opt/share/nginx/html/stat
+RRDOUTPUT=/opt/share/www/custom/rrdstorm
 FORCEGRAPH=no
 
 #-------------------------------------------------------------------
